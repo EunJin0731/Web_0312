@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script
+            src="http://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+</head>
+<body>
+    <form method="get" action="/Greeting">
+        <input name="say" placeholder="인사말">
+        <input name="to" placeholder="이름">
+        <button>SUBMIT</button>
+    </form>
+    <div>
+        <input id="say" placeholder="인사말">
+        <input id="to" placeholder="이름">
+        <button onclick="send()">SUBMIT</button>
+        <script>
+            function send() {
+                let say = $("#say").val();
+                let to = $("#to").val();
+
+                location.href = "http://localhost:8080/greeting1/" + say + "/" + to;
+            }
+        </script>
+    </div>
+</body>
+</html>
